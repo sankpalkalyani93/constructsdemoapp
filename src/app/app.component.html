@@ -1,0 +1,25 @@
+<!-- <div>
+<a routerLink = "/"> MyPage</a></div>
+<div><a routerLink = "/aboutus"> AboutUs </a>
+</div>
+<router-outlet></router-outlet>
+-->
+<div>
+<input [(ngModel)]="displayData" type="checkbox"/> 
+Display Message
+<hr />
+<div *ngIf="displayData; else message">
+    Hello and Have A Good Day..!
+</div>
+<ng-template #message>
+    Check the checkbox to see greeting of the day.
+</ng-template>
+</div>
+<hr />
+<div>
+<button (click)="display = !display">
+{{display ? 'Hide' : 'Display'}}
+</button>
+<hr />
+<br>
+<div *ngIf="display"> Welcome to Angular..! </div>
